@@ -1,11 +1,6 @@
-import React from 'react';
-import './Card.css'; // Asegúrate de tener tu archivo de estilos CSS
-
-interface CardProps {
-  title: string;
-  content: string;
-  imageUrl: string;
-}
+import React from 'react'
+import './Card.css' // Asegúrate de tener tu archivo de estilos CSS
+import { CardProps } from './CardProps'
 
 export const Card: React.FC<CardProps> = ({ title, content, imageUrl }) => {
   return (
@@ -16,5 +11,5 @@ export const Card: React.FC<CardProps> = ({ title, content, imageUrl }) => {
         <p className="card-text">{content}</p>
       </div>
     </div>
-  );
-};
+  )
+}
