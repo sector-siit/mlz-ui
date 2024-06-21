@@ -25,7 +25,7 @@ export const Basic: Story = {
     imageUrl: 'https://picsum.photos/id/237/200/300',
   },
 }
-export const Basic2: Story = {
+export const Secondary: Story = {
   args: {
     title: 'Card Title',
     content: 'Card contet',
