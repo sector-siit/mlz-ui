@@ -33,7 +33,6 @@
     "@mui/material-nextjs": "^5.15.11",
     "@next/font": "^14.2.4",
     "@types/next": "^9.0.0",
-    "google": "link:next/font/google",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
