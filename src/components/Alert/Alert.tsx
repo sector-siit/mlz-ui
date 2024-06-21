@@ -1,3 +1,4 @@
+'use client'
 import MuiAlert from '@mui/material/Alert'
 
 export interface AlertProps {
@@ -8,3 +9,4 @@ export interface AlertProps {
 export const Alert = ({ type, message }: AlertProps) => {
   return <MuiAlert severity={type}>{message}</MuiAlert>
 }
+export default Alert
