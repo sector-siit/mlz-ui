@@ -35,3 +35,5 @@ jobs:
       run: pnpm install
     - name: Build and Publish
       run: pnpm publish:npm
+    env:
+      NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
