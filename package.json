@@ -16,7 +16,7 @@
     "build-storybook": "storybook build",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .gitignore --fix",
     "build": "rimraf dist && tsc && vite build",
-    "publish:npm": "rimraf dist && tsc && vite build && cd dist && npm publish --access public"
+    "publish:npm": "npm version patch --force && rimraf dist && tsc && vite build && cd dist && npm publish --access public"
   },
   "peerDependencies": {
     "@emotion/react": "^11.11.4",
