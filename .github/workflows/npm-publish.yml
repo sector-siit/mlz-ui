@@ -1,5 +1,5 @@
 ## publish npm package using pnpm
-name: pnpm Example Workflow
+name: Publish NPM Package @sector.siit/mlz-ui
 on:
   push:
     branches:
