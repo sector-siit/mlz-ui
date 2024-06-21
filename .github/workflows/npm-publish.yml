@@ -31,8 +31,8 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.PAT }}
       run: |
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "github-actions"
+        git config --global user.email "androide1169836654@gmail.com"
+        git config --global user.name "androide2374"
         CURRENT_VERSION=$(node -p "require('./package.json').version")
         npm version patch -m "ci: bump version to %s [skip ci]"
         NEW_VERSION=$(node -p "require('./package.json').version")
