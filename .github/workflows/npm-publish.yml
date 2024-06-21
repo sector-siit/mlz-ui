@@ -1,26 +1,33 @@
-name: Publish Package
-
+name: pnpm Example Workflow
 on:
   push:
     branches:
       - main
-
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        node-version: [20]
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
       with:
-        node-version: '18'
-        cache: 'npm'
+        version: 9
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
+    # configure git user and email
+    - name: Configure Git
+      run: |
+        git config --global user.email "sector.siit@gmail.com"
+        git config --global user.name "GitHub Actions"
 
     - name: Install dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Bump version and push changes
       env:
