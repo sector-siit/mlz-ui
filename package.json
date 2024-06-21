@@ -1,6 +1,6 @@
 {
   "name": "@sector.siit/mlz-ui",
-  "version": "0.0.814",
+  "version": "0.0.815",
   "description": "Repositorio de componentes para proyectos MLZ",
   "main": "index.cjs.js",
   "module": "index.es.js",
