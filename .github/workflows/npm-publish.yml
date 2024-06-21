@@ -11,6 +11,12 @@ jobs:
       matrix:
         node-version: [20]
     steps:
+    - uses: actions/checkout@v3
+
+    - uses: webiny/action-conventional-commits@v1.3.0
+      with:
+        GITHUB_TOKEN: ${{ secrets.PAT }} # Optional, for private repositories.
+        allowed-commit-types: "feat,fix" # Optional, set if you want a subset of commit types to be allowed.
     - uses: actions/checkout@v4
     - name: Install pnpm
       uses: pnpm/action-setup@v4
@@ -29,10 +35,11 @@ jobs:
 
     - name: Bump version and push changes
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.PAT }}
+
       run: |
-        git config --global user.email "github-actions@github.com"
-        git config --global user.name "github-actions"
+        git config --global user.email "androide1169836654@gmail.com"
+        git config --global user.name "androide2374"
         CURRENT_VERSION=$(node -p "require('./package.json').version")
         npm version patch -m "ci: bump version to %s [skip ci]"
         NEW_VERSION=$(node -p "require('./package.json').version")

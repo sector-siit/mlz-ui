@@ -4,6 +4,7 @@ node_modules/
 # Build output
 build/
 dist/
+storybook-static/
 # Local env files
 .env.local
 .env.development.local
