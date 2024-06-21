@@ -33,6 +33,11 @@ jobs:
        npm version patch -m "Bump version to %s"
     - name: Install dependencies
       run: pnpm install
+    #setup npm token for publishing
+    - name: Setup NPM Token
+      run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
     - name: Build and Publish
       run: pnpm publish:npm
       env:
