@@ -21,6 +21,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
+    # configure git user and email
+    - name: Configure Git
+      run: |
+        git config --global user.email "sector.siit@gmail.com"
+        git config --global user.name "GitHub Actions"
     - name: Update package.json version
       # Bump the version in package.json using npm version
       run: |
