@@ -31,6 +31,7 @@ Importa los componentes que desees en tu UI
     <div>
       <Alert message="Error de algun type" type="error" />
       <Button variant="outlined">Click aqui</Button>
+      <Button variant="outlined">Click aqui</Button>
     </div>
   )
 ```
